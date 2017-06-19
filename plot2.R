@@ -6,8 +6,6 @@
 # This file creates a line graph showing global activepower in kilowatts over over a 2-day period in February, 2007. 
 ####################
 
-library(lubridate)
-
 # Read in the data from the text file "household_power_consumption.txt" in the working directory. 
 data = read.table("household_power_consumption.txt", header = TRUE, sep = ";")
 
@@ -30,7 +28,7 @@ for (i in 3:8){
 
 # plot line graph. 
 
-plot(data$newdate,data$Global_active_power,type = "l",ylab = "Global Active Power (kilowatts)")
+plot(data$newdate,data$Global_active_power,type = "l", xlab = "", ylab = "Global Active Power (kilowatts)")
 
 dev.copy(png,'plot2.png')
 dev.off()
